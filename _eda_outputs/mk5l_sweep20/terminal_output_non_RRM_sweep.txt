@@ -1,0 +1,935 @@
+(.mm) [PS] INFO_510_FA_25_Final_Proj > python -u -m _code.models.sweep_model2_mk5l `
+>>     --img_root "_data/gtzan_kaggle/Data/images_grey_scale" `
+>>     --features_csv "_data/gtzan_kaggle/Data/features_30_sec.csv" `
+>>     --classes "blues,classical,country,disco,hiphop,jazz,metal,pop,reggae,rock" `
+>>     --random_sweep 20 `
+>>     --k_folds 3 `
+>>     --batch_size 8 `
+>>     --img_height 224 `
+>>     --img_width 224 `
+>>     --channels 1 `
+>>     --holdout_frac 0.20 `
+>>     --holdout_min_cov 0.90 `
+>>     --out_dir "_eda_outputs/mk5l_sweep20"
+WARNING:tensorflow:From C:\Users\natha\OneDrive\Desktop\0_Fall_25\0_INFO_510\INFO_510_FA_25_Final_Proj\.mm\Lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+📥 Loaded CSV: 1,000 rows
+✔ Normalized 58 numeric columns
+📁 Created sweep directory: _eda_outputs\mk5l_sweep20\sweep_20251127_000321
+✔ Holdout coverage 1.00 (attempt 1)
+                  Config cfg_0                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_0                 │
+│ dropout_backbone     │ 0.2024291552664907    │
+│ dropout_tab          │ 0.3872755370922067    │
+│ dense_units_img      │ 768                   │
+│ dense_units_tab      │ 64                    │
+│ lr                   │ 0.0001700402601280877 │
+│ epochs               │ 50                    │
+│ optimizer            │ adamw                 │
+│ fusion               │ gated                 │
+│ head_type            │ mc_dropout            │
+│ kl_factor            │ 1.3747244890387615    │
+│ prior_scale          │ 0.9798568739614242    │
+│ posterior_scale_init │ 0.006946262345013622  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_0
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_0
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_0
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_1                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_1                 │
+│ dropout_backbone     │ 0.2751557498348832    │
+│ dropout_tab          │ 0.30891140975538106   │
+│ dense_units_img      │ 256                   │
+│ dense_units_tab      │ 192                   │
+│ lr                   │ 0.0003859610325516066 │
+│ epochs               │ 50                    │
+│ optimizer            │ rmsprop               │
+│ fusion               │ concat                │
+│ head_type            │ det                   │
+│ kl_factor            │ 1.3936843569225617    │
+│ prior_scale          │ 1.1547635292058807    │
+│ posterior_scale_init │ 0.02817393035166376   │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_1
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_1
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_1
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_1  │ 0.7484  │
+│ 2    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                 Config cfg_2                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                      ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_2                │
+│ dropout_backbone     │ 0.13221431772690256  │
+│ dropout_tab          │ 0.25994106079476753  │
+│ dense_units_img      │ 384                  │
+│ dense_units_tab      │ 192                  │
+│ lr                   │ 0.000204107451851056 │
+│ epochs               │ 75                   │
+│ optimizer            │ rmsprop              │
+│ fusion               │ gated                │
+│ head_type            │ mc_dropout           │
+│ kl_factor            │ 1.3694212424140877   │
+│ prior_scale          │ 0.808565680809612    │
+│ posterior_scale_init │ 0.009003477585099038 │
+└──────────────────────┴──────────────────────┘
+🔹 Fold 1/3 — cfg_2
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_2
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_2
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_1  │ 0.7484  │
+│ 2    │ cfg_2  │ 0.7196  │
+│ 3    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_3
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_3                  │
+│ dropout_backbone     │ 0.26234760205535834    │
+│ dropout_tab          │ 0.12593199872197525    │
+│ dense_units_img      │ 512                    │
+│ dense_units_tab      │ 96                     │
+│ lr                   │ 0.00045562049909705297 │
+│ epochs               │ 50                     │
+│ optimizer            │ adam                   │
+│ fusion               │ gated                  │
+│ head_type            │ det                    │
+│ kl_factor            │ 1.2072385509515022     │
+│ prior_scale          │ 0.9688266113405012     │
+│ posterior_scale_init │ 0.008682506803492546   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_3
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_3
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_3
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_1  │ 0.7484  │
+│ 2    │ cfg_3  │ 0.7422  │
+│ 3    │ cfg_2  │ 0.7196  │
+│ 4    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_4                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_4                 │
+│ dropout_backbone     │ 0.1473044967660687    │
+│ dropout_tab          │ 0.3748614601269771    │
+│ dense_units_img      │ 512                   │
+│ dense_units_tab      │ 192                   │
+│ lr                   │ 7.272932747316438e-05 │
+│ epochs               │ 75                    │
+│ optimizer            │ rmsprop               │
+│ fusion               │ gated                 │
+│ head_type            │ det                   │
+│ kl_factor            │ 1.2136337064853948    │
+│ prior_scale          │ 1.183079074799753     │
+│ posterior_scale_init │ 0.005372887961957486  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_4
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_4
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_4
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_2  │ 0.7196  │
+│ 5    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_5                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_5                 │
+│ dropout_backbone     │ 0.12137350168120675   │
+│ dropout_tab          │ 0.35567019589563376   │
+│ dense_units_img      │ 384                   │
+│ dense_units_tab      │ 64                    │
+│ lr                   │ 7.408866889634677e-05 │
+│ epochs               │ 75                    │
+│ optimizer            │ adamw                 │
+│ fusion               │ concat                │
+│ head_type            │ det                   │
+│ kl_factor            │ 1.093346729729678     │
+│ prior_scale          │ 0.9481609657958304    │
+│ posterior_scale_init │ 0.014315692749969178  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_5
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_5
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_5
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_2  │ 0.7196  │
+│ 5    │ cfg_5  │ 0.7196  │
+│ 6    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_6                   
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_6                  │
+│ dropout_backbone     │ 0.1646121301681164     │
+│ dropout_tab          │ 0.18758188902699569    │
+│ dense_units_img      │ 384                    │
+│ dense_units_tab      │ 96                     │
+│ lr                   │ 0.00023015046329596185 │
+│ epochs               │ 50                     │
+│ optimizer            │ adam                   │
+│ fusion               │ concat                 │
+│ head_type            │ flipout                │
+│ kl_factor            │ 0.9161350526762441     │
+│ prior_scale          │ 0.8128683821648403     │
+│ posterior_scale_init │ 0.006797336833922405   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_6
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_6
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_6
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_2  │ 0.7196  │
+│ 5    │ cfg_5  │ 0.7196  │
+│ 6    │ cfg_6  │ 0.6908  │
+│ 7    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_7                   
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_7                  │
+│ dropout_backbone     │ 0.11551558226183554    │
+│ dropout_tab          │ 0.33056024573629317    │
+│ dense_units_img      │ 512                    │
+│ dense_units_tab      │ 96                     │
+│ lr                   │ 0.00021387263884353695 │
+│ epochs               │ 50                     │
+│ optimizer            │ adam                   │
+│ fusion               │ concat                 │
+│ head_type            │ det                    │
+│ kl_factor            │ 0.8425797751262953     │
+│ prior_scale          │ 1.0608857156220795     │
+│ posterior_scale_init │ 0.009698022113750631   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_7
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_7
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_7
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_7  │ 0.7359  │
+│ 5    │ cfg_2  │ 0.7196  │
+│ 6    │ cfg_5  │ 0.7196  │
+│ 7    │ cfg_6  │ 0.6908  │
+│ 8    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                 Config cfg_8                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                      ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_8                │
+│ dropout_backbone     │ 0.2316327608115825   │
+│ dropout_tab          │ 0.12520627972144077  │
+│ dense_units_img      │ 256                  │
+│ dense_units_tab      │ 96                   │
+│ lr                   │ 8.94085823599002e-05 │
+│ epochs               │ 75                   │
+│ optimizer            │ adam                 │
+│ fusion               │ concat               │
+│ head_type            │ det                  │
+│ kl_factor            │ 1.0469584210803098   │
+│ prior_scale          │ 1.1366301810883446   │
+│ posterior_scale_init │ 0.020065633426610975 │
+└──────────────────────┴──────────────────────┘
+🔹 Fold 1/3 — cfg_8
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_8
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_8
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_8  │ 0.7384  │
+│ 5    │ cfg_7  │ 0.7359  │
+│ 6    │ cfg_2  │ 0.7196  │
+│ 7    │ cfg_5  │ 0.7196  │
+│ 8    │ cfg_6  │ 0.6908  │
+│ 9    │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_9                   
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_9                  │
+│ dropout_backbone     │ 0.2012700508120062     │
+│ dropout_tab          │ 0.10478568869363422    │
+│ dense_units_img      │ 384                    │
+│ dense_units_tab      │ 96                     │
+│ lr                   │ 0.00048738826554390615 │
+│ epochs               │ 50                     │
+│ optimizer            │ adamw                  │
+│ fusion               │ concat                 │
+│ head_type            │ mc_dropout             │
+│ kl_factor            │ 1.261039698609904      │
+│ prior_scale          │ 0.8000308391347362     │
+│ posterior_scale_init │ 0.01824928705584864    │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_9
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_9
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_9
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_8  │ 0.7384  │
+│ 5    │ cfg_7  │ 0.7359  │
+│ 6    │ cfg_9  │ 0.7233  │
+│ 7    │ cfg_2  │ 0.7196  │
+│ 8    │ cfg_5  │ 0.7196  │
+│ 9    │ cfg_6  │ 0.6908  │
+│ 10   │ cfg_0  │ 0.6745  │
+└──────┴────────┴─────────┘
+                  Config cfg_10                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_10                 │
+│ dropout_backbone     │ 0.2677527019554591     │
+│ dropout_tab          │ 0.25658452145120747    │
+│ dense_units_img      │ 256                    │
+│ dense_units_tab      │ 192                    │
+│ lr                   │ 0.00014203345155245665 │
+│ epochs               │ 75                     │
+│ optimizer            │ rmsprop                │
+│ fusion               │ gated                  │
+│ head_type            │ flipout                │
+│ kl_factor            │ 1.2314691455256783     │
+│ prior_scale          │ 1.2571048044284232     │
+│ posterior_scale_init │ 0.01859635571345669    │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_10
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_10
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_10
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_8  │ 0.7384  │
+│ 5    │ cfg_7  │ 0.7359  │
+│ 6    │ cfg_9  │ 0.7233  │
+│ 7    │ cfg_2  │ 0.7196  │
+│ 8    │ cfg_5  │ 0.7196  │
+│ 9    │ cfg_6  │ 0.6908  │
+│ 10   │ cfg_0  │ 0.6745  │
+│ 11   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                 Config cfg_11                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_11                │
+│ dropout_backbone     │ 0.15543350435915776   │
+│ dropout_tab          │ 0.08193664402180426   │
+│ dense_units_img      │ 256                   │
+│ dense_units_tab      │ 128                   │
+│ lr                   │ 8.299120480892165e-05 │
+│ epochs               │ 75                    │
+│ optimizer            │ rmsprop               │
+│ fusion               │ concat                │
+│ head_type            │ mc_dropout            │
+│ kl_factor            │ 0.9433135851949697    │
+│ prior_scale          │ 1.0113014540349505    │
+│ posterior_scale_init │ 0.017265975971488025  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_11
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_11
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_11
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_8  │ 0.7384  │
+│ 5    │ cfg_11 │ 0.7371  │
+│ 6    │ cfg_7  │ 0.7359  │
+│ 7    │ cfg_9  │ 0.7233  │
+│ 8    │ cfg_2  │ 0.7196  │
+│ 9    │ cfg_5  │ 0.7196  │
+│ 10   │ cfg_6  │ 0.6908  │
+│ 11   │ cfg_0  │ 0.6745  │
+│ 12   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_12                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_12                 │
+│ dropout_backbone     │ 0.20499144098694733    │
+│ dropout_tab          │ 0.33489412398654       │
+│ dense_units_img      │ 384                    │
+│ dense_units_tab      │ 128                    │
+│ lr                   │ 0.00019754168308732796 │
+│ epochs               │ 50                     │
+│ optimizer            │ adam                   │
+│ fusion               │ gated                  │
+│ head_type            │ flipout                │
+│ kl_factor            │ 1.392792750473308      │
+│ prior_scale          │ 0.9190475708267105     │
+│ posterior_scale_init │ 0.013038711312586115   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_12
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_12
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_12
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_1  │ 0.7484  │
+│ 3    │ cfg_3  │ 0.7422  │
+│ 4    │ cfg_8  │ 0.7384  │
+│ 5    │ cfg_11 │ 0.7371  │
+│ 6    │ cfg_7  │ 0.7359  │
+│ 7    │ cfg_9  │ 0.7233  │
+│ 8    │ cfg_2  │ 0.7196  │
+│ 9    │ cfg_5  │ 0.7196  │
+│ 10   │ cfg_6  │ 0.6908  │
+│ 11   │ cfg_0  │ 0.6745  │
+│ 12   │ cfg_12 │ 0.6371  │
+│ 13   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_13                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_13                 │
+│ dropout_backbone     │ 0.11674063215294175    │
+│ dropout_tab          │ 0.22168297303876527    │
+│ dense_units_img      │ 768                    │
+│ dense_units_tab      │ 192                    │
+│ lr                   │ 0.00012981472146798167 │
+│ epochs               │ 50                     │
+│ optimizer            │ adamw                  │
+│ fusion               │ concat                 │
+│ head_type            │ mc_dropout             │
+│ kl_factor            │ 0.8265545830424609     │
+│ prior_scale          │ 0.946261417131861      │
+│ posterior_scale_init │ 0.01435713340359154    │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_13
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_13
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_13
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_13 │ 0.7597  │
+│ 3    │ cfg_1  │ 0.7484  │
+│ 4    │ cfg_3  │ 0.7422  │
+│ 5    │ cfg_8  │ 0.7384  │
+│ 6    │ cfg_11 │ 0.7371  │
+│ 7    │ cfg_7  │ 0.7359  │
+│ 8    │ cfg_9  │ 0.7233  │
+│ 9    │ cfg_2  │ 0.7196  │
+│ 10   │ cfg_5  │ 0.7196  │
+│ 11   │ cfg_6  │ 0.6908  │
+│ 12   │ cfg_0  │ 0.6745  │
+│ 13   │ cfg_12 │ 0.6371  │
+│ 14   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                 Config cfg_14                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_14                │
+│ dropout_backbone     │ 0.1882524106871173    │
+│ dropout_tab          │ 0.1908397127167648    │
+│ dense_units_img      │ 512                   │
+│ dense_units_tab      │ 192                   │
+│ lr                   │ 7.367094572864616e-05 │
+│ epochs               │ 75                    │
+│ optimizer            │ adam                  │
+│ fusion               │ gated                 │
+│ head_type            │ det                   │
+│ kl_factor            │ 1.1391498422276123    │
+│ prior_scale          │ 0.8586176490093079    │
+│ posterior_scale_init │ 0.014686966974945804  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_14
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_14
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_14
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_8  │ 0.7384  │
+│ 7    │ cfg_11 │ 0.7371  │
+│ 8    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_6  │ 0.6908  │
+│ 13   │ cfg_0  │ 0.6745  │
+│ 14   │ cfg_12 │ 0.6371  │
+│ 15   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                 Config cfg_15                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_15                │
+│ dropout_backbone     │ 0.2991222785719829    │
+│ dropout_tab          │ 0.3033656595239474    │
+│ dense_units_img      │ 256                   │
+│ dense_units_tab      │ 64                    │
+│ lr                   │ 9.216066389870967e-05 │
+│ epochs               │ 75                    │
+│ optimizer            │ adamw                 │
+│ fusion               │ concat                │
+│ head_type            │ mc_dropout            │
+│ kl_factor            │ 1.3514427943931495    │
+│ prior_scale          │ 1.037142492748502     │
+│ posterior_scale_init │ 0.020144747534296452  │
+└──────────────────────┴───────────────────────┘
+🔹 Fold 1/3 — cfg_15
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_15
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_15
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_8  │ 0.7384  │
+│ 7    │ cfg_11 │ 0.7371  │
+│ 8    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_15 │ 0.7109  │
+│ 13   │ cfg_6  │ 0.6908  │
+│ 14   │ cfg_0  │ 0.6745  │
+│ 15   │ cfg_12 │ 0.6371  │
+│ 16   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_16                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_16                 │
+│ dropout_backbone     │ 0.2621383621461003     │
+│ dropout_tab          │ 0.07083067196527477    │
+│ dense_units_img      │ 512                    │
+│ dense_units_tab      │ 128                    │
+│ lr                   │ 0.00021804488956592998 │
+│ epochs               │ 75                     │
+│ optimizer            │ adam                   │
+│ fusion               │ concat                 │
+│ head_type            │ flipout                │
+│ kl_factor            │ 1.1346101107318871     │
+│ prior_scale          │ 0.9362773243228735     │
+│ posterior_scale_init │ 0.0076554036679507146  │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_16
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_16
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_16
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_8  │ 0.7384  │
+│ 7    │ cfg_11 │ 0.7371  │
+│ 8    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_15 │ 0.7109  │
+│ 13   │ cfg_16 │ 0.6972  │
+│ 14   │ cfg_6  │ 0.6908  │
+│ 15   │ cfg_0  │ 0.6745  │
+│ 16   │ cfg_12 │ 0.6371  │
+│ 17   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_17                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_17                 │
+│ dropout_backbone     │ 0.2941963801588865     │
+│ dropout_tab          │ 0.20413055232999777    │
+│ dense_units_img      │ 256                    │
+│ dense_units_tab      │ 128                    │
+│ lr                   │ 0.00021367677488403684 │
+│ epochs               │ 75                     │
+│ optimizer            │ rmsprop                │
+│ fusion               │ concat                 │
+│ head_type            │ mc_dropout             │
+│ kl_factor            │ 1.1329287521346965     │
+│ prior_scale          │ 0.9325206834110171     │
+│ posterior_scale_init │ 0.013482448889193917   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_17
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_17
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_17
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_8  │ 0.7384  │
+│ 7    │ cfg_11 │ 0.7371  │
+│ 8    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_15 │ 0.7109  │
+│ 13   │ cfg_16 │ 0.6972  │
+│ 14   │ cfg_17 │ 0.6908  │
+│ 15   │ cfg_6  │ 0.6908  │
+│ 16   │ cfg_0  │ 0.6745  │
+│ 17   │ cfg_12 │ 0.6371  │
+│ 18   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_18                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_18                 │
+│ dropout_backbone     │ 0.10161636013530835    │
+│ dropout_tab          │ 0.10763815487036599    │
+│ dense_units_img      │ 384                    │
+│ dense_units_tab      │ 96                     │
+│ lr                   │ 0.00025973244813292854 │
+│ epochs               │ 75                     │
+│ optimizer            │ adamw                  │
+│ fusion               │ concat                 │
+│ head_type            │ flipout                │
+│ kl_factor            │ 1.1030309975762176     │
+│ prior_scale          │ 1.071241377356118      │
+│ posterior_scale_init │ 0.012617658493031546   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_18
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_18
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_18
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_8  │ 0.7384  │
+│ 7    │ cfg_11 │ 0.7371  │
+│ 8    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_15 │ 0.7109  │
+│ 13   │ cfg_16 │ 0.6972  │
+│ 14   │ cfg_17 │ 0.6908  │
+│ 15   │ cfg_6  │ 0.6908  │
+│ 16   │ cfg_18 │ 0.6796  │
+│ 17   │ cfg_0  │ 0.6745  │
+│ 18   │ cfg_12 │ 0.6371  │
+│ 19   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+                  Config cfg_19                  
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                      ┃                        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ id                   │ cfg_19                 │
+│ dropout_backbone     │ 0.21122566147285587    │
+│ dropout_tab          │ 0.1065811117699823     │
+│ dense_units_img      │ 512                    │
+│ dense_units_tab      │ 128                    │
+│ lr                   │ 0.00022728955132533306 │
+│ epochs               │ 50                     │
+│ optimizer            │ adam                   │
+│ fusion               │ concat                 │
+│ head_type            │ mc_dropout             │
+│ kl_factor            │ 1.0967722903182642     │
+│ prior_scale          │ 0.8788877907872545     │
+│ posterior_scale_init │ 0.006500085766343009   │
+└──────────────────────┴────────────────────────┘
+🔹 Fold 1/3 — cfg_19
+🧩 Alignment: kept 532/999 spectrograms (missing in CSV: 467)
+🧩 Alignment: kept 267/999 spectrograms (missing in CSV: 732)
+🔹 Fold 2/3 — cfg_19
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🔹 Fold 3/3 — cfg_19
+🧩 Alignment: kept 533/999 spectrograms (missing in CSV: 466)
+🧩 Alignment: kept 266/999 spectrograms (missing in CSV: 733)
+🧩 Alignment: kept 799/999 spectrograms (missing in CSV: 200)
+     Live Leaderboard      
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Rank ┃ Config ┃ Val Acc ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│ 1    │ cfg_14 │ 0.7659  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 2    │ cfg_4  │ 0.7609  │
+│ 3    │ cfg_13 │ 0.7597  │
+│ 4    │ cfg_1  │ 0.7484  │
+│ 5    │ cfg_3  │ 0.7422  │
+│ 6    │ cfg_19 │ 0.7397  │
+│ 6    │ cfg_19 │ 0.7397  │
+│ 7    │ cfg_8  │ 0.7384  │
+│ 8    │ cfg_11 │ 0.7371  │
+│ 7    │ cfg_8  │ 0.7384  │
+│ 8    │ cfg_11 │ 0.7371  │
+│ 9    │ cfg_7  │ 0.7359  │
+│ 9    │ cfg_7  │ 0.7359  │
+│ 10   │ cfg_9  │ 0.7233  │
+│ 10   │ cfg_9  │ 0.7233  │
+│ 11   │ cfg_2  │ 0.7196  │
+│ 11   │ cfg_2  │ 0.7196  │
+│ 12   │ cfg_5  │ 0.7196  │
+│ 12   │ cfg_5  │ 0.7196  │
+│ 13   │ cfg_15 │ 0.7109  │
+│ 14   │ cfg_16 │ 0.6972  │
+│ 15   │ cfg_17 │ 0.6908  │
+│ 15   │ cfg_17 │ 0.6908  │
+│ 16   │ cfg_6  │ 0.6908  │
+│ 17   │ cfg_18 │ 0.6796  │
+│ 18   │ cfg_0  │ 0.6745  │
+│ 19   │ cfg_12 │ 0.6371  │
+│ 20   │ cfg_10 │ 0.6283  │
+└──────┴────────┴─────────┘
+  Sweeping configs ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20/20
+
+🏁 Sweep complete!
+📂 Sweep folder: _eda_outputs\mk5l_sweep20\sweep_20251127_000321
+📊 Leaderboard CSV: _eda_outputs\mk5l_sweep20\sweep_20251127_000321\leaderboard.csv
+🏆 Leaders folder:  _eda_outputs\mk5l_sweep20\sweep_20251127_000321\leaders
+(.mm) [PS] INFO_510_FA_25_Final_Proj > ..
+(.mm) [PS] INFO_510_FA_25_Final_Proj > python -u -m _code.models.sweep_model2_mk5l `
+(.mm) [PS] INFO_510_FA_25_Final_Proj > python -u -m _code.models.sweep_model2_mk5l `
+(.mm) [PS] INFO_510_FA_25_Final_Proj > python -u -m _code.models.sweep_model2_mk5l `
+(.mm) [PS] INFO_510_FA_25_Final_Proj > python -u -m _code.models.sweep_model2_mk5l `
+>>     --img_root "_data/gtzan_kaggle/Data/images_grey_scale" `
+>>     --features_csv "_data/gtzan_kaggle/Data/features_30_sec.csv" `
+>>     --classes "blues,classical,country,disco,hiphop,jazz,metal,pop,reggae,rock" `
+>>     --random_sweep 20 `
+>>     --k_folds 3 `
+>>     --batch_size 8 `
+>>     --img_height 224 `
+>>     --img_width 224 `
+>>     --img_width 224 `
+>>     --channels 1 `
+>>     --holdout_frac 0.20 `
+>>     --holdout_min_cov 0.90 `
+>>     --out_dir "_eda_outputs/mk5l_sweep20"
+
+
+
+
+
+
+
+
+
+
+

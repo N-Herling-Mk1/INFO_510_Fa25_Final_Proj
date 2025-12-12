@@ -1,0 +1,15 @@
+{
+  "img_root": "_data/gtzan_kaggle/Data/images_grey_scale",
+  "features_csv": "_data/gtzan_kaggle/Data/features_30_sec.csv",
+  "classes": "blues,classical,country,disco,hiphop,jazz,metal,pop,reggae,rock",
+  "random_sweep": 20,
+  "k_folds": 3,
+  "batch_size": 8,
+  "img_height": 224,
+  "img_width": 224,
+  "channels": 1,
+  "holdout_frac": 0.2,
+  "holdout_min_cov": 0.9,
+  "out_dir": "_eda_outputs/mk5l_sweep20",
+  "no_ui": false
+}

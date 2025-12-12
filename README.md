@@ -33,9 +33,13 @@ INFO_510_FA_25_Final_Proj/
 │       └── features_30_sec.csv       # Audio feature table
 ├── _docs/                            # Documentation
 ├── _eda_outputs/                     # Experiment outputs
+│   ├── mk5l_sweep20/                 # Sweep 1 results (mk5l)
+│   └── mk5n_sweep20_2/               # Sweep 2 results (mk5m)*
 ├── infer/                            # Inference scripts
 └── README.md
 ```
+
+**Note:** *The folder `mk5n_sweep20_2` contains outputs from `sweep_model2_mk5m.py` (variant M). The 'n' in the folder name was a typo - it should have been 'mk5m_sweep20_2' to match the script name, but the outputs are correct.*
 
 ---
 
@@ -134,7 +138,9 @@ python -u -m _code.models.sweep_model2_mk5l \
 - `--holdout_frac 0.20`: Hold out 20% of data for final testing
 - `--holdout_min_cov 0.90`: Ensure 90% genre coverage in holdout set
 
-**Outputs:**
+**Results Location:** `_eda_outputs/mk5l_sweep20/`
+
+**Output Structure:**
 ```
 _eda_outputs/mk5l_sweep20/
     sweep_YYYYMMDD_HHMMSS/
@@ -170,6 +176,26 @@ python -u _code/models/sweep_model2_mk5m.py \
 - May use different model architecture variants
 - Potentially different fusion strategies or head types
 - Check script documentation for specific differences
+
+**Results Location:** `_eda_outputs/mk5n_sweep20_2/` *(Note: folder name has 'n' but contains mk5m outputs)*
+
+---
+
+## Experiment Results
+
+All experimental outputs from both sweeps are included in this repository:
+
+- **Sweep 1 (mk5l)**: `_eda_outputs/mk5l_sweep20/`
+  - 20 random hyperparameter configurations
+  - 3-fold cross-validation per configuration
+  - Complete metrics, plots, and leaderboards
+
+- **Sweep 2 (mk5m)**: `_eda_outputs/mk5n_sweep20_2/`
+  - Alternative model configurations
+  - Same evaluation protocol as Sweep 1
+  - Full results and visualizations
+
+Each sweep directory contains timestamped run folders with comprehensive outputs including confusion matrices, ROC curves, per-genre metrics, and uncertainty quantification plots.
 
 ---
 

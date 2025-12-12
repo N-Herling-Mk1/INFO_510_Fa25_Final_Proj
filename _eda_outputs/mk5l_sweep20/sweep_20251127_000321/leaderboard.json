@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cfg_14",
+    "mean_val_acc": 0.7659363765218289,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_14_085513026"
+  },
+  {
+    "id": "cfg_4",
+    "mean_val_acc": 0.760905071667934,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_4_022309461"
+  },
+  {
+    "id": "cfg_13",
+    "mean_val_acc": 0.7596754057428216,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_13_082344676"
+  },
+  {
+    "id": "cfg_1",
+    "mean_val_acc": 0.7484206771610674,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_1_003359585"
+  },
+  {
+    "id": "cfg_3",
+    "mean_val_acc": 0.74215970638206,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_3_015207992"
+  },
+  {
+    "id": "cfg_19",
+    "mean_val_acc": 0.7396534407178995,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_19_124211365"
+  },
+  {
+    "id": "cfg_8",
+    "mean_val_acc": 0.7383862277416388,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_8_050149633"
+  },
+  {
+    "id": "cfg_11",
+    "mean_val_acc": 0.7371377882909521,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_11_070658260"
+  },
+  {
+    "id": "cfg_7",
+    "mean_val_acc": 0.7358893488402655,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_7_043031003"
+  },
+  {
+    "id": "cfg_9",
+    "mean_val_acc": 0.7233439403752828,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_9_054639097"
+  },
+  {
+    "id": "cfg_2",
+    "mean_val_acc": 0.719640862455765,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_2_010454746"
+  },
+  {
+    "id": "cfg_5",
+    "mean_val_acc": 0.7196220889301906,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_5_031153754"
+  },
+  {
+    "id": "cfg_15",
+    "mean_val_acc": 0.7108642392498098,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_15_094055240"
+  },
+  {
+    "id": "cfg_16",
+    "mean_val_acc": 0.6972252729201279,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_16_102646542"
+  },
+  {
+    "id": "cfg_17",
+    "mean_val_acc": 0.6907765668853783,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_17_111213640"
+  },
+  {
+    "id": "cfg_6",
+    "mean_val_acc": 0.6907624867411976,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_6_035831094"
+  },
+  {
+    "id": "cfg_18",
+    "mean_val_acc": 0.6795687721175598,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_18_115735356"
+  },
+  {
+    "id": "cfg_0",
+    "mean_val_acc": 0.674546854026452,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_0_000321735"
+  },
+  {
+    "id": "cfg_12",
+    "mean_val_acc": 0.6371030572686397,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_12_075210467"
+  },
+  {
+    "id": "cfg_10",
+    "mean_val_acc": 0.6283405142068655,
+    "run_dir": "_eda_outputs\\mk5l_sweep20\\sweep_20251127_000321\\runs\\cfg_10_062056014"
+  }
+]

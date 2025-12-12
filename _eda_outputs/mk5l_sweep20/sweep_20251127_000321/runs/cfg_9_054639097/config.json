@@ -1,0 +1,15 @@
+{
+  "id": "cfg_9",
+  "dropout_backbone": 0.2012700508120062,
+  "dropout_tab": 0.10478568869363422,
+  "dense_units_img": 384,
+  "dense_units_tab": 96,
+  "lr": 0.00048738826554390615,
+  "epochs": 50,
+  "optimizer": "adamw",
+  "fusion": "concat",
+  "head_type": "mc_dropout",
+  "kl_factor": 1.261039698609904,
+  "prior_scale": 0.8000308391347362,
+  "posterior_scale_init": 0.01824928705584864
+}
