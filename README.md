@@ -345,8 +345,11 @@ This project is for academic purposes only (INFO 510 Final Project).
 ## Contact
 
 **Student**: Nathan Herling
+
 **Course**: INFO 510 - Fall 2025  
+
 **Institution**: University of Arizona
+
 **e-mail**: nth@arizona.edu
 
 **Bear Down! 🐻⬇️**
