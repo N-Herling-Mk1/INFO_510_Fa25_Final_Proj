@@ -1,8 +1,8 @@
 # INFO 510 Fall 2025 Final Project
 
 <div align="center">
-  <img src="bear_down.png" alt="Bear Down" width="45%" style="display: inline-block; margin-right: 2%;">
-  <img src="laser_cut.gif" alt="Project Demo" width="45%" style="display: inline-block;">
+  <img src="bear_down.png" alt="Bear Down" height="300">
+  <img src="laser_cut.gif" alt="Project Demo" height="300">
 </div>
 
 ---
